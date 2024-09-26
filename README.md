@@ -24,38 +24,55 @@ Test the C Program for the desired output.
 # PROGRAM:
 
 ## C Program to print process ID and parent Process ID using Linux API system calls
+```
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+int main(void)
+{	//variable to store calling function's process id
+	pid_t process_id;
+	//variable to store parent function's process id
+	pid_t p_process_id;
+	//getpid() - will return process id of calling function
+	process_id = getpid();
+	//getppid() - will return process id of parent function
+	p_process_id = getppid();
+	//printing the process ids
+
+//printing the process ids
+	printf("The process id: %d\n",process_id);
+	printf("The process id of parent function: %d\n",p_process_id);
+	return 0; }
+
+```
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-##OUTPUT
-
-
-
-
-
-
-
-
-
-
+## OUTPUT
+![Screenshot from 2024-09-26 08-15-56](https://github.com/user-attachments/assets/bc60c30f-f8ac-43d0-9370-984849dbb2ee)
 
 
 
 
 ## C Program to create new process using Linux API system calls fork() and exit()
+```
+#include <stdio.h>
+#include<stdlib.h>
+int main()
+{ int pid; 
+pid=fork(); 
+if(pid == 0) 
+{ printf("Iam child my pid is %d\n",getpid()); 
+printf("My parent pid is:%d\n",getppid()); 
+exit(0); } 
+else{ 
+printf("I am parent, my pid is %d\n",getpid()); 
+sleep(100); 
+exit(0);} 
+}
+
+
+```
 
 
 
@@ -65,11 +82,8 @@ Test the C Program for the desired output.
 
 
 
-
-
-
-
-##OUTPUT
+## OUTPUT
+![Screenshot from 2024-09-26 09-44-33](https://github.com/user-attachments/assets/fad75657-c56d-4d43-ac29-851aef8068af)
 
 
 
@@ -83,30 +97,9 @@ Test the C Program for the desired output.
 
 
 
+## OUTPUT
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##OUTPUT
-
+![Screenshot from 2024-09-26 09-51-26](https://github.com/user-attachments/assets/d184da82-b43b-4370-8224-717c74791e5f)
 
 
 
